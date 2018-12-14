@@ -5,8 +5,8 @@ class RecipeTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @node = nodes(:seafood)
-    @recipe = @node.recipes.build(name: "My Recipe")
+    @restaurant = restaurants(:seafood)
+    @recipe = @restaurant.recipes.build(name: "My Recipe")
   end
 
   test "should be valid" do
@@ -24,7 +24,7 @@ class RecipeTest < ActiveSupport::TestCase
   end
 
   test "node should be present" do
-    @recipe.node_id = nil
+    @recipe.restaurant_id = nil
     assert_not @recipe.valid?
   end
 

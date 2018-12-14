@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
-  belongs_to :node
+  belongs_to :restaurant
   validates :name, presence: true, length: { maximum: 255 }
-  validates :node_id, presence: true
+  validates :restaurant_id, presence: true
 
 
 end

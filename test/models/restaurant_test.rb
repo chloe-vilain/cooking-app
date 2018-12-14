@@ -5,26 +5,26 @@ class NodeTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @node = Node.new(name: "My Restaurant", description: "Serves seafood")
+    @restaurant = Restaurant.new(name: "My Restaurant", description: "Serves seafood")
   end
 
   test "should be valid" do
-    assert @node.valid?
+    assert @restaurant.valid?
   end
 
   test "name should be present" do
-    @node.name = nil
-    assert_not @node.valid?
+    @restaurant.name = nil
+    assert_not @restaurant.valid?
   end
 
   test "name should not exceed 255 characters" do
-    @node.name = 'a'*256
-    assert_not @node.valid?
+    @restaurant.name = 'a'*256
+    assert_not @restaurant.valid?
   end
 
   test "description should be present" do
-    @node.description = nil
-    assert_not @node.valid?
+    @restaurant.description = nil
+    assert_not @restaurant.valid?
   end
 
 end

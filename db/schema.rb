@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_220200) do
+ActiveRecord::Schema.define(version: 2018_12_14_170226) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -22,19 +22,12 @@ ActiveRecord::Schema.define(version: 2018_12_13_220200) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "nodes", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.integer "node_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["node_id"], name: "index_recipes_on_node_id"
+    t.integer "restaurant_id"
+    t.index ["restaurant_id"], name: "index_recipes_on_restaurant_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -45,6 +38,13 @@ ActiveRecord::Schema.define(version: 2018_12_13_220200) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
