@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_170226) do
+ActiveRecord::Schema.define(version: 2018_12_14_171058) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 2018_12_14_170226) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "restaurant_relationships", force: :cascade do |t|
+    t.integer "parent_id"
+    t.integer "child_id"
+    t.integer "required_recipe_id"
+    t.integer "required_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["child_id"], name: "index_restaurant_relationships_on_child_id"
+    t.index ["parent_id"], name: "index_restaurant_relationships_on_parent_id"
+    t.index ["required_recipe_id"], name: "index_restaurant_relationships_on_required_recipe_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

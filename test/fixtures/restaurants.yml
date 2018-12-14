@@ -4,6 +4,10 @@ seafood:
   name: Seafood Restaurant
   description: Delicisous seafood yum!
 
-two:
-  name: MyString
-  description: MyString
+steak:
+  name: Steakhouse
+  description: Tasty steaks
+
+continental:
+  name: Continental Bistro
+  description: All sorts of traditional food
