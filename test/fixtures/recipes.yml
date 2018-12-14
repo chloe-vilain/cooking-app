@@ -1,1 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+scallops:
+  name: scallops
+  restaurant: seafood
+
+salmon:
+  name: salmon
+  restaurant: seafood
+
+surfturf:
+  name: surf and turf
+  restaurant: continental
