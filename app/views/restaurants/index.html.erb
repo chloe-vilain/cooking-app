@@ -1,0 +1,13 @@
+<% provide(:title, 'Restaurants Admin') %>
+
+<h1>All restaurants</h1>
+
+<%= will_paginate %>
+<table class="restaurants admin">
+  <tr>
+    <th>Restaurant</th>
+  </tr>
+  <%= render @restaurants %>
+</table>
+<%= will_paginate %>
+<%= link_to "New restaurant", new_restaurant_path, class: "btn btn-sm btn-primary" %>

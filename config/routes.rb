@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'recipes/index'
+  get 'recipes/show'
+  get 'recipes/new'
+  get 'recipes/create'
+  get 'recipes/edit'
+  get 'recipes/update'
+  get 'recipes/destroy'
   root 'static_pages#home'
   get '/faqs', to: 'static_pages#faqs'
   get '/about', to: 'static_pages#about'
@@ -16,5 +23,5 @@ Rails.application.routes.draw do
   scope 'admin' do
     resources :restaurants, :recipes, :restaurant_relationships
   end
-  
+
 end
